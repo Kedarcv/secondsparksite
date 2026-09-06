@@ -7,16 +7,16 @@
     "build": "next build",
     "start": "next start",
     "deploy": "vercel deploy --prod",
-    "deploy:preview": "vercel deploy",
-    "deploy:cloudflare": "npm run build && wrangler pages deploy out --project-name=second-spark"
+    "deploy:preview": "vercel deploy"
   },
   "dependencies": {
     "next": "16.3.4",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "resend": "^6.26.0",
+    "svix": "^2.3.0"
   },
   "devDependencies": {
-    "vercel": "^59.11.7",
-    "wrangler": "^4.129.0"
+    "vercel": "^59.11.7"
   }
 }

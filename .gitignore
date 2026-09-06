@@ -27,3 +27,8 @@ out/
 Images/
 /*.png
 /*.jpg
+
+# secrets — never commit real values. .env.example documents the shape.
+.env
+.env.local
+.env.*.local
