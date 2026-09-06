@@ -36,10 +36,9 @@ one command. `npm run deploy:preview` gives a preview URL that doesn't touch
 production. To deploy on every push instead, connect the repo in the Vercel
 dashboard — it detects Next.js on its own.
 
-**Attaching the domain.** Project → Settings → Domains → add
-`secondspark.co.zw`. Since the domain is registered in the same account, Vercel
-wires the DNS and issues the certificate itself. Add `www.secondspark.co.zw`
-too and pick which one redirects to the other.
+**The domain.** `secondspark.online` is attached under Project → Settings →
+Domains. It's registered in the same Vercel account, so DNS and the
+certificate are both handled automatically — no separate registrar step.
 
 `vercel.json` carries the security and caching headers, including
 `Cache-Control: no-store` on `/api/*` so a dynamic response is never cached.
