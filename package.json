@@ -1,0 +1,22 @@
+{
+  "name": "second-spark-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3210",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "vercel deploy --prod",
+    "deploy:preview": "vercel deploy",
+    "deploy:cloudflare": "npm run build && wrangler pages deploy out --project-name=second-spark"
+  },
+  "dependencies": {
+    "next": "16.3.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "vercel": "^59.11.7",
+    "wrangler": "^4.129.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "wallet-home": {
+    "w": 640,
+    "h": 753
+  },
+  "quick-actions": {
+    "w": 640,
+    "h": 766
+  },
+  "send-money": {
+    "w": 640,
+    "h": 1115
+  },
+  "bureau-de-change": {
+    "w": 640,
+    "h": 1115
+  },
+  "your-cards": {
+    "w": 640,
+    "h": 753
+  },
+  "activity": {
+    "w": 640,
+    "h": 753
+  },
+  "get-paid": {
+    "w": 640,
+    "h": 1115
+  },
+  "insights": {
+    "w": 640,
+    "h": 1115
+  },
+  "profile": {
+    "w": 640,
+    "h": 1115
+  }
+}

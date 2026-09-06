@@ -1,0 +1,29 @@
+# dependencies & build output
+node_modules/
+.next/
+out/
+.vercel/
+.wrangler/
+
+# OS / editor
+.DS_Store
+*.log
+
+# ---------------------------------------------------------------------------
+# Source images are NOT tracked, on purpose.
+#
+# Images/ holds the ORIGINAL mockups and brand shots — un-redacted. They still
+# contain the real personal email address, the full names, and the MiKi fee
+# schedules that were deliberately blurred out before publishing. Committing
+# them, especially to a public repo, would undo that.
+#
+# What the site actually needs IS tracked: the processed, redacted output in
+# public/screens/ and public/brand/. A fresh clone builds and deploys fine.
+# Only re-running scripts/extract-*.mjs needs these originals.
+#
+# To track them anyway, delete the three rules below — and make the repo
+# private first.
+# ---------------------------------------------------------------------------
+Images/
+/*.png
+/*.jpg

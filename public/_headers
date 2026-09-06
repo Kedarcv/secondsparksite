@@ -1,0 +1,20 @@
+# Cloudflare Pages headers. Apache ignores this file; Cloudflare ignores
+# .htaccess. Both ship, so the export works on either host.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+
+# Content-hashed by the build — a change means a new filename.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Not hashed: the extract scripts reuse these filenames, so they revalidate
+# weekly rather than being pinned for a year.
+/brand/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/screens/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

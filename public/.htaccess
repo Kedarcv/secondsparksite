@@ -1,0 +1,41 @@
+# Second Spark Intelligence — Apache / cPanel config
+# Ships with the static export. Upload alongside the rest of `out/`.
+# (Ignored by Cloudflare Pages — see _headers for that.)
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  # Build output under /_next/ is content-hashed: a new build means a new
+  # filename, so it can be cached forever.
+  <FilesMatch "\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Brand and app-screen images are NOT hashed — re-running the extract scripts
+  # reuses the same filenames. A long immutable cache would pin stale artwork in
+  # visitors' browsers, so these revalidate weekly instead.
+  <FilesMatch "\.(webp|avif|png|jpe?g|svg|ico)$">
+    Header set Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
+  </FilesMatch>
+
+  # HTML must revalidate so a redeploy is picked up immediately.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml \
+    application/javascript application/json image/svg+xml
+</IfModule>
+
+# Uncomment once your SSL certificate is active in cPanel:
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} !=on
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+# </IfModule>
